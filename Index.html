@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Geek Medieval</title>
+  <meta name="description" content="Blog geek sobre as cronicas de Albinur, um mundo medieval repleto de aventuras e histórias épicas.">
+  <meta name="keywords" content="Albinur, crônicas, medieval, histórias, dragões, guerreiros, fantasia, blog geek">
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset e variáveis de tema */
+    :root {
+      --bg-color: #f4ede0;
+      --text-color: #3a2e1f;
+      --accent-color: #5a4632;
+      --bg-sidebar: #e8ddd2;
+      --transition: 0.4s ease;
+    }
+    [data-theme="dark"] {
+      --bg-color: #2b2721;
+      --text-color: #e1dcd5;
+      --accent-color: #cba258;
+      --bg-sidebar: #3a332f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-family: 'Merriweather', serif; background: var(--bg-color); color: var(--text-color); scroll-behavior: smooth; }
+    body { display: flex; flex-direction: column; min-height: 100vh; transition: background var(--transition), color var(--transition); }
+
+    /* Container principal */
+    .container { max-width: 1200px; width: 90%; margin: 2rem auto; display: flex; gap: 2rem; }
+
+    /* Dark mode toggle */
+    .toggle-wrapper { position: fixed; top: 1rem; right: 1rem; z-index: 1000; }
+    .toggle-btn { background: none; border: 2px solid var(--accent-color); border-radius: 50%; padding: 0.5rem; cursor: pointer; font-size: 1.2rem; color: var(--accent-color); transition: background var(--transition), transform var(--transition); }
+    .toggle-btn:hover { background: rgba(0,0,0,0.1); transform: rotate(20deg); }
+
+    /* Sidebar */
+    .sidebar { flex: 0 0 200px; background: var(--bg-sidebar); padding: 1rem; border-radius: 6px; position: sticky; top: 4rem; height: fit-content; transition: background var(--transition); }
+    .sidebar h3 { font-family: 'Uncial Antiqua', cursive; margin-bottom: 1rem; font-size: 1.6rem; color: var(--accent-color); }
+    .sidebar ul { list-style: none; }
+    .sidebar li { margin-bottom: 0.75rem; }
+    .sidebar a { text-decoration: none; font-weight: bold; color: var(--accent-color); position: relative; transition: color var(--transition); }
+    .sidebar a::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px; background: var(--accent-color); transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
+    .sidebar a:hover { color: var(--text-color); }
+    .sidebar a:hover::after { transform: scaleX(1); }
+
+    /* Main content */
+    main { flex: 1; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Header */
+    header { text-align: center; margin-bottom: 1.5rem; }
+    .logo { font-family: 'Uncial Antiqua', cursive; font-size: 3rem; color: var(--accent-color); text-shadow: 2px 2px 4px rgba(0,0,0,0.2); transition: color var(--transition); }
+    nav.top-nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; }
+    nav.top-nav a { text-decoration: none; font-weight: bold; color: var(--accent-color); padding: 0.5rem 1rem; border: 2px solid transparent; transition: all var(--transition); }
+    nav.top-nav a:hover, nav.top-nav a.active { border-color: var(--accent-color); background: rgba(90,70,50,0.1); border-radius: 4px; }
+
+    /* Story Section with fade */
+    .story { opacity: 0; transform: translateY(20px); transition: opacity var(--transition), transform var(--transition); display: none; }
+    .story.active { display: block; opacity: 1; transform: translateY(0); }
+    .story h2 { font-family: 'Uncial Antiqua', cursive; font-size: 2rem; margin-bottom: 1rem; color: var(--accent-color); }
+    .story p { margin-bottom: 1em; line-height: 1.6; }
+
+    /* Embedded Doc */
+    #doc-embed { margin: 2rem 0; }
+    .iframe-wrapper { position: relative; }
+    .iframe-wrapper.loading iframe { visibility: hidden; }
+    #doc-spinner { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.5); color: #fff; padding: 0.5rem 1rem; border-radius: 4px; display: none; }
+    .iframe-wrapper.loading #doc-spinner { display: block; }
+    .iframe-wrapper iframe { width: 100%; height: 600px; border: none; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    /* Hidden content */
+    .hidden { display: none !important; }
+
+    /* Buttons */
+    .buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
+    .btn { background: var(--accent-color); color: var(--bg-color); padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-family: 'Merriweather', serif; font-size: 1rem; transition: background var(--transition); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn:hover:not(:disabled) { background: #463822; }
+
+    /* Footer */
+    footer { margin-top: auto; text-align: center; padding: 1rem 0; font-size: 0.9rem; background: var(--bg-sidebar); transition: background var(--transition); }
+    footer a { color: var(--accent-color); text-decoration: none; }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .sidebar { flex: none; margin-bottom: 1.5rem; position: relative; top: auto; }
+      .toggle-wrapper { display: none; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <div class="toggle-wrapper">
+    <button class="toggle-btn" aria-label="Alternar modo claro/escuro" onclick="toggleTheme()">🌓</button>
+  </div>
+
+  <header class="container">
+    <div>
+      <div class="logo">Crônicas de Albinur</div>
+      <nav class="top-nav" aria-label="Menu principal">
+        <ul id="menu">
+          <li><a href="#" class="tab-link active" data-index="0">Prólogo</a></li>
+          <li><a href="#" class="tab-link" data-index="1">Ameaça Dracônica</a></li>
+          <li><a href="#" class="tab-link" data-index="2">Belford e Seus Reinos</a></li>
+          <li><a href="#" class="tab-link" data-index="3">Guerreiros Lendários</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar" aria-label="Navegação de Continentes">
+      <h3>Continentes</h3>
+      <ul>
+        <li><a href="#">Belford</a></li>
+        <li><a href="#">Gantro</a></li>
+        <li><a href="#">Endorath</a></li>
+        <li><a href="#">Nihon (日本)</a></li>
+        <li><a href="#" class="unlock-link" data-target="eldros">Eldros</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="stories">
+        <article class="story active">
+          <h2>Prólogo</h2>
+          <p>Neste mundo de Albinur, lendas antigas narram a origem de três reinos, unidos por alianças frágeis e ameaçados por dragões colossais...</p>
+        </article>
+        <article class="story">
+          <h2>Ameaça Dracônica</h2>
+          <p>Escamas de fogo riscavam o céu perto do Reino de Kheltan enquanto exércitos se preparavam para enfrentar a fúria dos dragões vermelhos...</p>
+        </article>
+        <article class="story">
+          <h2>Belford e Seus Reinos</h2>
+          <p>Colonizado por um andarilho visionário, Belford abriga Irus, Kheltan e Lotun, cada um com sua cultura e guerreiros especializados...</p>
+        </article>
+        <article class="story">
+          <h2>Guerreiros Lendários</h2>
+          <p>Thorfinn, treinado dentro da carcaça do dragão ancestral, tornou-se símbolo de coragem, enquanto Eve desafiava os céus para forjar sua lâmina...</p>
+        </article>
+      </section>
+
+      <!-- Seção para incorporar e recarregar o Google Docs -->
+      <section id="doc-embed">
+        <div class="iframe-wrapper loading">
+          <div id="doc-spinner">Carregando história...</div>
+          <iframe id="doc-frame" src="https://docs.google.com/document/d/1tHQIaAKedVzgnwSwSKQufwKypqnytNHhaitiufH-USI/pub?embedded=true" title="Google Doc incorporado"></iframe>
+        </div>
+      </section>
+
+      <!-- Conteúdo de Eldros oculto até desbloqueio -->
+      <section id="eldros-content" class="hidden">
+        <h2>Eldros</h2>
+        <p>Eldros é um continente misterioso, coberto por florestas ancestrais e ruínas esquecidas. Dizem que suas montanhas guardam portais para outros reinos...</p>
+      </section>
+
+      <div class="buttons">
+        <button id="prevBtn" class="btn" disabled>Anterior</button>
+        <button id="nextBtn" class="btn">Próxima</button>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Crônicas de Albinur - <a href="#">Sobre</a> | <a href="#">Contatos</a></p>
+  </footer>
+
+  <script>
+    // Tema claro/escuro
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    }
+
+    // Navegação de histórias
+    const tabs = document.querySelectorAll('.tab-link');
+    const stories = document.querySelectorAll('.story');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let current = 0;
+    function updateView(idx) {
+      tabs.forEach(tab => tab.classList.toggle('active', +tab.dataset.index === idx));
+      stories.forEach((s, i) => s.classList.toggle('active', i === idx));
+      prevBtn.disabled = idx === 0;
+      nextBtn.disabled = idx === stories.length - 1;
+      current = idx;
+    }
+    tabs.forEach(tab => tab.addEventListener('click', e => { e.preventDefault(); updateView(+tab.dataset.index);}));
+    prevBtn.addEventListener('click', () => updateView(current - 1));
+    nextBtn.addEventListener('click', () => updateView(current + 1));
+
+    // Recarregar Google Docs automaticamente
+    const iframeWrapper = document.querySelector('.iframe-wrapper');
+    const iframe = document.getElementById('doc-frame');
+    iframe.onload = () => iframeWrapper.classList.remove('loading');
+    setInterval(() => {
+      iframeWrapper.classList.add('loading');
+      iframe.src = iframe.src;
+    }, 30000);
+
+    // Desbloquear Eldros
+    document.querySelectorAll('.unlock-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const pwd = prompt('Informe a senha para desbloquear Eldros:');
+        if (pwd === 'eldros123') {
+          document.getElementById('eldros-content').classList.remove('hidden');
+          document.getElementById('eldros-content').scrollIntoView({ behavior: 'smooth' });
+        } else {
+          alert('Senha incorreta.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

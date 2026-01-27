@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crônicas De Albinur- Histórias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Aplica fontes personalizadas */
+        body {
+            font-family: 'Merriweather', serif;
+            /* Fundo com textura sutil de pergaminho/papel antigo */
+            background-color: #fdf6e3;
+            /* Cor base de pergaminho */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .font-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Cores personalizadas (exemplo) */
+        .bg-medieval-dark {
+            background-color: #4a3c2a;
+        }
+
+        /* Marrom escuro (madeira/couro) */
+        .text-medieval-light {
+            color: #fdf6e3;
+        }
+
+        /* Texto cor pergaminho */
+        .border-medieval-accent {
+            border-color: #8a6d3b;
+        }
+
+        /* Dourado/Bronze envelhecido */
+        .text-medieval-accent {
+            color: #8a6d3b;
+        }
+
+        .bg-medieval-card {
+            background-color: #f5eeda;
+        }
+
+        /* Fundo do card um pouco mais claro */
+        .hover\:bg-medieval-accent:hover {
+            background-color: #8a6d3b;
+        }
+
+        .hover\:text-medieval-dark:hover {
+            color: #4a3c2a;
+        }
+
+        /* Estilo para barra de rolagem (opcional, para tema) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdf6e3;
+            /* Cor pergaminho */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a6d3b;
+            /* Cor acento */
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b542d;
+            /* Cor acento mais escura */
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <header class="bg-medieval-dark text-medieval-light shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#"
+                class="font-title text-2xl lg:text-3xl font-bold hover:text-medieval-accent transition duration-300">
+                Crônicas De Albinur
+            </a>
+            <title>Crônicas Medievais - Histórias</title>
+            <nav>
+                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-6 font-title items-center">
+                    <li><a href="#" class="hover:text-medieval-accent transition duration-300">Início</a></li>
+                    <li><a href="#" class="hover:text-medieval-accent transition duration-300">Histórias</a></li>
+                    <li><a href="#" class="hover:text-medieval-accent transition duration-300">Categorias</a></li>
+                    <li><a href="#" class="hover:text-medieval-accent transition duration-300">Sobre</a></li>
+                    <li><a href="#" class="hover:text-medieval-accent transition duration-300">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-medieval-dark text-center py-2">
+            <a href="#"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Início</a>
+            <a href="#"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Histórias</a>
+            <a href="#"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Categorias</a>
+            <a href="#"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Sobre</a>
+            <a href="#"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Contato</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section
+            class="mb-12 text-center relative overflow-hidden rounded-lg shadow-md border-2 border-medieval-accent">
+            <div class="relative w-full h-80 overflow-hidden"> <!-- Aumenta a altura para exibir mais da imagem -->
+                <img src="Vhar'Zhul despertar.png" alt="[Imagem de um cenário medieval]"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4">
+                <h1 class="font-title text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">Onde Lendas São
+                    Forjadas</h1>
+                <p class="text-lg text-gray-200 drop-shadow-md">Explore contos de bravura, magia e mistério.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="font-title text-3xl font-bold text-medieval-dark mb-6 border-b-2 border-medieval-accent pb-2">
+                Últimas Crônicas</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <article
+                    class="bg-medieval-card rounded-lg shadow-md overflow-hidden border border-medieval-accent transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/4a3c2a/fdf6e3?text=Gantro"
+                        alt="[Imagem representando Gantro]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-title text-xl font-bold mb-2 text-medieval-dark">Gantro</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">Em um reino distante...</p>
+                        <a href="#"
+                            class="inline-block bg-medieval-dark text-medieval-light px-4 py-2 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 text-sm font-semibold">Ler
+                            Mais</a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-medieval-card rounded-lg shadow-md overflow-hidden border border-medieval-accent transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/4a3c2a/fdf6e3?text=Belford"
+                        alt="[Imagem representando Belford]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-title text-xl font-bold mb-2 text-medieval-dark">Onde o Céu Arde e a Honra Vive.
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">Em um continente onde dragões não são
+                            lendas... são ameaças vivas.
+                            Onde os céus escurecem com asas colossais e as montanhas ruem sob garras flamejantes.</p>
+                        <a href="Belford.html"
+                            class="inline-block bg-medieval-dark text-medieval-light px-4 py-2 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 text-sm font-semibold">Ler
+                            Mais</a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-medieval-card rounded-lg shadow-md overflow-hidden border border-medieval-accent transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/4a3c2a/fdf6e3?text=Endorath"
+                        alt="[Imagem representando Endorath]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-title text-xl font-bold mb-2 text-medieval-dark">Endorath</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">...</p>
+                        <a href="#"
+                            class="inline-block bg-medieval-dark text-medieval-light px-4 py-2 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 text-sm font-semibold">Ler
+                            Mais</a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-medieval-card rounded-lg shadow-md overflow-hidden border border-medieval-accent transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/4a3c2a/fdf6e3?text=Eldros"
+                        alt="[Imagem representando Eldros]" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-title text-xl font-bold mb-2 text-medieval-dark">Eldros</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3"> Uma terra de magias antigas...</p>
+                        <a href="#"
+                            class="inline-block bg-medieval-dark text-medieval-light px-4 py-2 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 text-sm font-semibold">Ler
+                            Mais</a>
+                    </div>
+                </article>
+
+                <article
+                    class="bg-medieval-card rounded-lg shadow-md overflow-hidden border border-medieval-accent transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/600x400/4a3c2a/fdf6e3?text=Nihon" alt="[Imagem representando Nihon]"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+
+                        <h3 class="font-title text-xl font-bold mb-2 text-medieval-dark">Nihon</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3">No extremo oriente, </p>
+                        <a href="#"
+                            class="inline-block bg-medieval-dark text-medieval-light px-4 py-2 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 text-sm font-semibold">Ler
+                            Mais</a>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-medieval-dark text-medieval-light mt-12 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+
+            <p>© 2025 Crônicas De Albinur. Todos os direitos reservados.</p>
+            <p class="mt-1">Um portal para aventuras de outrora.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menu = document.getElementById('menu'); // Menu desktop para referência
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // Tailwind 'md' breakpoint
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
