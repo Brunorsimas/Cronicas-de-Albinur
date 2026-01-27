@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reino Oculto - Magia Ancestral | Crônicas de Albinur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Aplica fontes personalizadas */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #fdf6e3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .font-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Cores personalizadas */
+        .bg-medieval-dark {
+            background-color: #4a3c2a;
+        }
+
+        .text-medieval-light {
+            color: #fdf6e3;
+        }
+
+        .border-medieval-accent {
+            border-color: #8a6d3b;
+        }
+
+        .text-medieval-accent {
+            color: #8a6d3b;
+        }
+
+        .bg-medieval-card {
+            background-color: #f5eeda;
+        }
+
+        .hover\:bg-medieval-accent:hover {
+            background-color: #8a6d3b;
+        }
+
+        .hover\:text-medieval-dark:hover {
+            color: #4a3c2a;
+        }
+
+        .text-medieval-dark {
+            color: #4a3c2a;
+        }
+
+        /* Estilos para Drop Caps */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 5rem;
+            line-height: 4rem;
+            padding-right: 8px;
+            font-family: 'Cinzel', serif;
+            color: #8a6d3b;
+            font-weight: 700;
+        }
+
+        /* Estilos para o conteúdo da história */
+        .story-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(74, 60, 42, 0.3);
+        }
+
+        .story-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.2);
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        /* Estilo para barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdf6e3;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a6d3b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b542d;
+        }
+
+        /* Espaço para imagem */
+        .kingdom-image-placeholder {
+            background: linear-gradient(135deg, #8a6d3b, #4a3c2a);
+            border: 3px dashed #fdf6e3;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fdf6e3;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        /* Estilo místico para o Reino Oculto */
+        .mystic-glow {
+            text-shadow: 0 0 10px rgba(138, 109, 59, 0.3);
+        }
+
+        .prophecy-text {
+            font-style: italic;
+            color: #5a4632;
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-left: 3px solid #8a6d3b;
+            border-right: 3px solid #8a6d3b;
+            background: rgba(245, 238, 218, 0.5);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <header class="bg-medieval-dark text-medieval-light shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="Belford.html"
+                class="font-title text-2xl lg:text-3xl font-bold hover:text-medieval-accent transition duration-300">
+                Crônicas de Albinur
+            </a>
+            <nav>
+                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-6 font-title items-center">
+                    <li><a href="Belford.html" class="hover:text-medieval-accent transition duration-300">Belford</a></li>
+                    <li><a href="Irus.html" class="hover:text-medieval-accent transition duration-300">Irus</a></li>
+                    <li><a href="Kheltan.html" class="hover:text-medieval-accent transition duration-300">Kheltan</a></li>
+                    <li><a href="Lotun.html" class="hover:text-medieval-accent transition duration-300">Lotun</a></li>
+                    <li><a href="ReinoOculto.html" class="hover:text-medieval-accent transition duration-300">Reino Oculto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-medieval-dark text-center py-2">
+            <a href="Belford.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Belford</a>
+            <a href="Irus.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Irus</a>
+            <a href="Kheltan.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Kheltan</a>
+            <a href="Lotun.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Lotun</a>
+            <a href="ReinoOculto.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Reino Oculto</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="max-w-4xl mx-auto">
+            <h1 class="font-title text-5xl font-bold text-medieval-dark mb-8 text-center mystic-glow"
+                style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Reino Oculto, Magia Ancestral</h1>
+
+            <!-- Espaço para imagem do reino -->
+            <div class="kingdom-image-placeholder">
+                <div>
+                    <div class="text-3xl mb-2">🔮</div>
+                    <div>Imagem do Reino Oculto</div>
+                    <div class="text-sm mt-2 opacity-75">Florestas ancestrais e segredos esquecidos</div>
+                </div>
+            </div>
+
+            <section class="story-content">
+                <h2 class="font-title text-3xl md:text-4xl font-bold text-medieval-dark mt-8 mb-4 border-b-4 border-medieval-accent pb-2 text-center">
+                    O Quarto Filho Místico</h2>
+                
+                <p class="drop-cap">O mais novo dos filhos era o mais introspectivo. Silencioso. Espiritual. Belford o viu partir para o leste, para as florestas longínquas e pântanos densos, onde a magia antiga ainda sussurrava pelas folhas.</p>
+
+                <p>Ali nasceu o quarto reino — uma terra onde xamãs andam entre espíritos e os dragões são vistos como portais e maldições. A magia não é comum em Belford. E talvez por isso, esse reino permaneceu oculto. Distante. Observando.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    As Florestas Sussurrantes</h3>
+                
+                <p>As florestas do Reino Oculto não são como as demais. As árvores têm milênios, seus troncos marcados com runas antigas que poucos conseguem decifrar. Dizem que as árvores falam, que o vento carrega mensagens dos espíritos, que cada folha contém um segredo esperando ser revelado.</p>
+
+                <p>Nas clareiras mais profundas, onde a luz do sol mal penetra, os xamãs realizam seus rituais. Eles não usam armas de metal, mas sim feitiços tecidos com palavras antigas, amuletos feitos de ossos de animais sagrados, e poções extraídas de plantas que só crescem sob a luz da lua.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Os Xamãs e os Espíritos</h3>
+                
+                <p>Os habitantes do Reino Oculto não se veem como mestres da natureza, mas como parte dela. Os xamãs servem como intermediários entre o mundo mortal e o realm espiritual. Eles podem falar com os ancestrais, prever o futuro através das entranhas da terra, e curar doenças que os médicos de outros reinos consideram incuráveis.</p>
+
+                <div class="prophecy-text">
+                    "O dragão não é apenas besta, é portal. Sua morte abre caminhos, sua vida mantém portais fechados. Matar um dragão é derrubar uma porta entre mundos."
+                </div>
+
+                <p>Essa visão dos dragões como seres místicos, e não apenas monstros, é o que diferencia o Reino Oculto dos outros reinos de Belford. Enquanto Irus os vê como ameaças, Kheltan como desafios, e Lotun como presas, o Reino Oculto os entende como parte de um equilíbrio cósmico.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Os Pântanos das Almas</h3>
+                
+                <p>No coração do reino estão os Pântanos das Almas, águas escuras onde os espíritos dos mortos descansam antes de passar para o outro mundo. Dizem que quem bebe dessas águas ganha a visão, mas também arrisca perder a própria alma.</p>
+
+                <p>Os pântanos são guardados por criaturas místicas — serpentes com olhos de cristal, aves que cantam profecias, e árvores que se movem quando ninguém está olhando. Apenas os xamãs mais experientes ousam entrar nessas terras, e mesmo eles o fazem com respeito e temor.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Magia Antiga e Proibições</h3>
+                
+                <p>A magia do Reino Oculto é diferente da feitiçaria comum. Não se baseia em fórmulas ou encantamentos, mas em conexão. Os xamãs não "controlam" os elementos — eles pedem permissão, eles negociam, eles se tornam um com o que desejam influenciar.</p>
+
+                <p>Existem proibições estritas: nunca usar magia para ganho pessoal, nunca interferir no livre arbítrio, nunca despertar os espíritos adormecidos sem razão justa. Quem quebra essas regras não enfrenta punição humana, mas a ira dos próprios espíritos.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Observadores Silenciosos</h3>
+                
+                <p>O Reino Oculto permaneceu afastado dos conflitos dos outros reinos, mas nunca ignorou o que acontecia em Belford. Os xamãs previram a chegada de Vhar'Zhul, sentiram a perturbação no equilíbrio quando Thorfinn devorou o coração do deus-dragão.</p>
+
+                <p>Eles observaram em silêncio enquanto os outros reinos lutavam, coletando conhecimento, entendendo as mudanças no tecido da realidade. Sabem que o que aconteceu com Thorfinn é apenas o começo de algo maior.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Os Segredos Guardados</h3>
+                
+                <p>Nas bibliotecas subterrâneas do Reino Oculto, guardadas por magias mais antigas que os próprios dragões, existem textos que falam sobre a verdadeira natureza de Albinur. Sobre os deuses que existiam antes dos dragões, sobre as guerras que moldaram o universo, sobre o propósito real dos continentes.</p>
+
+                <div class="prophecy-text">
+                    "Quando o cavaleiro sombrio carregar o coração do dragão, os véus se rasgarão. Os reinos cairão. E o silêncio falará."
+                </div>
+
+                <p>Esses segredos são guardados não por egoísmo, mas por sabedoria. Os xamãs entendem que algum conhecimento pode destruir tanto quanto pode salvar.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    O Despertar</h3>
+                
+                <p>Agora, com as mudanças que Thorfinn trouxe ao mundo, o Reino Oculto começa a se mover. Os xamãs sentem que o tempo da observação está terminando, que o momento da intervenção se aproxima.</p>
+
+                <p>Eles sabem que a jornada de Thorfinn fora de Belford não é acidental. Que as respostas que ele busca podem estar justamente nas florestas ancestrais que eles protegem há séculos.</p>
+
+                <p>O Reino Oculto não é apenas um lugar — é a memória de Albinur, a consciência do continente. E enquanto os outros reinos lutam com armas, o Reino Oculto prepara-se para lutar com conhecimento, com magia, com a verdade que poucos estão preparados para ouvir.</p>
+            </section>
+
+            <div class="mt-10 text-center">
+                <a href="Lotun.html"
+                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold mr-4">
+                    &larr; Lotun
+                </a>
+                <a href="Belford.html"
+                    class="inline-block bg-medieval-accent text-medieval-light px-6 py-3 rounded hover:bg-medieval-dark transition duration-300 font-semibold">
+                    Belford &rarr;
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="bg-medieval-dark text-medieval-light mt-12 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2025 Crônicas de Albinur. Todos os direitos reservados.</p>
+            <p class="mt-1">Reino Oculto - Onde os segredos antigos aguardam.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

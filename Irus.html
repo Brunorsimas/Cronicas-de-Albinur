@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irus - A Fortaleza do Mar | Crônicas de Albinur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Aplica fontes personalizadas */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #fdf6e3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .font-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Cores personalizadas */
+        .bg-medieval-dark {
+            background-color: #4a3c2a;
+        }
+
+        .text-medieval-light {
+            color: #fdf6e3;
+        }
+
+        .border-medieval-accent {
+            border-color: #8a6d3b;
+        }
+
+        .text-medieval-accent {
+            color: #8a6d3b;
+        }
+
+        .bg-medieval-card {
+            background-color: #f5eeda;
+        }
+
+        .hover\:bg-medieval-accent:hover {
+            background-color: #8a6d3b;
+        }
+
+        .hover\:text-medieval-dark:hover {
+            color: #4a3c2a;
+        }
+
+        .text-medieval-dark {
+            color: #4a3c2a;
+        }
+
+        /* Estilos para Drop Caps */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 5rem;
+            line-height: 4rem;
+            padding-right: 8px;
+            font-family: 'Cinzel', serif;
+            color: #8a6d3b;
+            font-weight: 700;
+        }
+
+        /* Estilos para o conteúdo da história */
+        .story-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(74, 60, 42, 0.3);
+        }
+
+        .story-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.2);
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        /* Estilo para barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdf6e3;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a6d3b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b542d;
+        }
+
+        /* Espaço para imagem */
+        .kingdom-image-placeholder {
+            background: linear-gradient(135deg, #8a6d3b, #4a3c2a);
+            border: 3px dashed #fdf6e3;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fdf6e3;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <header class="bg-medieval-dark text-medieval-light shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="Belford.html"
+                class="font-title text-2xl lg:text-3xl font-bold hover:text-medieval-accent transition duration-300">
+                Crônicas de Albinur
+            </a>
+            <nav>
+                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-6 font-title items-center">
+                    <li><a href="Belford.html" class="hover:text-medieval-accent transition duration-300">Belford</a></li>
+                    <li><a href="Irus.html" class="hover:text-medieval-accent transition duration-300">Irus</a></li>
+                    <li><a href="Kheltan.html" class="hover:text-medieval-accent transition duration-300">Kheltan</a></li>
+                    <li><a href="Lotun.html" class="hover:text-medieval-accent transition duration-300">Lotun</a></li>
+                    <li><a href="ReinoOculto.html" class="hover:text-medieval-accent transition duration-300">Reino Oculto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-medieval-dark text-center py-2">
+            <a href="Belford.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Belford</a>
+            <a href="Irus.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Irus</a>
+            <a href="Kheltan.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Kheltan</a>
+            <a href="Lotun.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Lotun</a>
+            <a href="ReinoOculto.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Reino Oculto</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="max-w-4xl mx-auto">
+            <h1 class="font-title text-5xl font-bold text-medieval-dark mb-8 text-center"
+                style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Irus, A Fortaleza do Mar</h1>
+
+            <!-- Espaço para imagem do reino -->
+            <div class="kingdom-image-placeholder">
+                <div>
+                    <div class="text-3xl mb-2">🏰</div>
+                    <div>Imagem de Irus</div>
+                    <div class="text-sm mt-2 opacity-75">A muralha costeira de Belford</div>
+                </div>
+            </div>
+
+            <section class="story-content">
+                <h2 class="font-title text-3xl md:text-4xl font-bold text-medieval-dark mt-8 mb-4 border-b-4 border-medieval-accent pb-2 text-center">
+                    O Primogênito Visionário</h2>
+                
+                <p class="drop-cap">O primogênito de Belford via nos dragões uma ameaça constante e inevitável. Por isso, desejava criar um reino forte, disciplinado e inflexível, capaz de resistir a qualquer ataque, mesmo dos céus. Com a ajuda do pai, fundou o Reino de Irus, às margens do mar.</p>
+
+                <p>Ali, os soldados foram treinados para lutar com armas tão pesadas quanto seus próprios corpos, resistindo ao impacto das feras aladas com pura força bruta. Poucos ágeis, mas inquebráveis. Irus se tornou a última muralha viva do continente, o único reino que sobrevive a 95% dos ataques dracônicos com suas estruturas intactas.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    A Muralha Costeira</h3>
+                
+                <p>Irus se fortaleceu como uma muralha costeira, onde os soldados treinavam para resistir, não para fugir. Aprenderam a empunhar armas tão pesadas quanto seus próprios corpos, desenvolvendo uma força bruta e defensiva sem igual. As muralhas de Irus são lendárias — dizem que cada pedra foi banhada no suor e na determinação de guerreiros que juraram proteger o continente.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    O Primeiro Avistamento</h3>
+                
+                <p>Foi em Irus que surgiram os primeiros registros de ataques de dragões. Numa noite inquieta, Belford acordou com um rugido que fez seu coração parar por um instante. O som vinha do mar.</p>
+
+                <p>Ao abrir a janela, viu ao longe, sob a luz pálida da lua, uma criatura imensa se afastando pelo oceano, olhos vermelhos como brasas, cauda arrastando ondas como se fossem cortinas de espuma. Ela não atacou. Mas o silêncio que deixou para trás foi pior do que fogo.</p>
+
+                <p>A partir daquele momento, Belford soube que o mundo era maior do que podia compreender. E que era preciso estar pronto.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Cultura e Disciplina</h3>
+                
+                <p>A cultura de Irus é moldada pela disciplina férrea e pela preparação constante. Desde jovens, os cidadãos são treinados no manejo de armas pesadas, na construção de fortificações e na resistência física. Os soldados de Irus são conhecidos por sua capacidade de suportar longos sítios e ataques contínuos.</p>
+
+                <p>As armaduras de Irus são as mais pesadas e resistentes de Belford, forjadas com técnicas ancestrais que as tornam quase impenetráveis. Cada guerreiro carrega não apenas armas, mas o peso da responsabilidade de proteger toda a costa oriental do continente.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    O Porto de Irus</h3>
+                
+                <p>O porto de Irus, conhecido como "A Boca do Mundo", é a principal saída de mercadorias para outros continentes. Os navios são reforçados com aço das forjas de Kheltan e acompanhados por guardas especiais treinados para detectar ameaças dracônicas no mar.</p>
+
+                <p>Qualquer carregamento precisa passar pela inspeção dos Olhos de Irus, uma ordem oficial que controla o que entra e sai do continente. Esta vigilância constante tornou Irus não apenas uma fortaleza militar, mas também o centro comercial estratégico de Belford.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Legado Eterno</h3>
+                
+                <p>O legado do primogênito de Belford vive em cada muralha erguida, em cada soldado treinado, em cada dia de paz conquistado através da vigilância constante. Irus não é apenas um reino — é a promessa de que Belford nunca cairá enquanto houver guerreiros dispostos a carregar o peso da defesa.</p>
+
+                <p>E quando os dragões rugem nos céus, é em Irus que todos olham, sabendo que ali está a última esperança, a muralha inquebrável que protege não apenas um reino, mas o continente inteiro.</p>
+            </section>
+
+            <div class="mt-10 text-center">
+                <a href="Belford.html"
+                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold mr-4">
+                    &larr; Voltar para Belford
+                </a>
+                <a href="Kheltan.html"
+                    class="inline-block bg-medieval-accent text-medieval-light px-6 py-3 rounded hover:bg-medieval-dark transition duration-300 font-semibold">
+                    Kheltan &rarr;
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="bg-medieval-dark text-medieval-light mt-12 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2025 Crônicas de Albinur. Todos os direitos reservados.</p>
+            <p class="mt-1">Irus - A muralha inquebrável de Belford.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotun - O Reino dos Caçadores | Crônicas de Albinur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Aplica fontes personalizadas */
+        body {
+            font-family: 'Merriweather', serif;
+            background-color: #fdf6e3;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .font-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Cores personalizadas */
+        .bg-medieval-dark {
+            background-color: #4a3c2a;
+        }
+
+        .text-medieval-light {
+            color: #fdf6e3;
+        }
+
+        .border-medieval-accent {
+            border-color: #8a6d3b;
+        }
+
+        .text-medieval-accent {
+            color: #8a6d3b;
+        }
+
+        .bg-medieval-card {
+            background-color: #f5eeda;
+        }
+
+        .hover\:bg-medieval-accent:hover {
+            background-color: #8a6d3b;
+        }
+
+        .hover\:text-medieval-dark:hover {
+            color: #4a3c2a;
+        }
+
+        .text-medieval-dark {
+            color: #4a3c2a;
+        }
+
+        /* Estilos para Drop Caps */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 5rem;
+            line-height: 4rem;
+            padding-right: 8px;
+            font-family: 'Cinzel', serif;
+            color: #8a6d3b;
+            font-weight: 700;
+        }
+
+        /* Estilos para o conteúdo da história */
+        .story-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(74, 60, 42, 0.3);
+        }
+
+        .story-content h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #4a3c2a;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.2);
+        }
+
+        .story-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            color: #1f2937;
+            text-align: justify;
+        }
+
+        /* Estilo para barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fdf6e3;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8a6d3b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b542d;
+        }
+
+        /* Espaço para imagem */
+        .kingdom-image-placeholder {
+            background: linear-gradient(135deg, #8a6d3b, #4a3c2a);
+            border: 3px dashed #fdf6e3;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fdf6e3;
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <header class="bg-medieval-dark text-medieval-light shadow-lg sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="Belford.html"
+                class="font-title text-2xl lg:text-3xl font-bold hover:text-medieval-accent transition duration-300">
+                Crônicas de Albinur
+            </a>
+            <nav>
+                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-6 font-title items-center">
+                    <li><a href="Belford.html" class="hover:text-medieval-accent transition duration-300">Belford</a></li>
+                    <li><a href="Irus.html" class="hover:text-medieval-accent transition duration-300">Irus</a></li>
+                    <li><a href="Kheltan.html" class="hover:text-medieval-accent transition duration-300">Kheltan</a></li>
+                    <li><a href="Lotun.html" class="hover:text-medieval-accent transition duration-300">Lotun</a></li>
+                    <li><a href="ReinoOculto.html" class="hover:text-medieval-accent transition duration-300">Reino Oculto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-medieval-dark text-center py-2">
+            <a href="Belford.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Belford</a>
+            <a href="Irus.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Irus</a>
+            <a href="Kheltan.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Kheltan</a>
+            <a href="Lotun.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Lotun</a>
+            <a href="ReinoOculto.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Reino Oculto</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="max-w-4xl mx-auto">
+            <h1 class="font-title text-5xl font-bold text-medieval-dark mb-8 text-center"
+                style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Lotun, O Reino dos Caçadores</h1>
+
+            <!-- Espaço para imagem do reino -->
+            <div class="kingdom-image-placeholder">
+                <div>
+                    <div class="text-3xl mb-2">🏹</div>
+                    <div>Imagem de Lotun</div>
+                    <div class="text-sm mt-2 opacity-75">As fronteiras audaciosas de Belford</div>
+                </div>
+            </div>
+
+            <section class="story-content">
+                <h2 class="font-title text-3xl md:text-4xl font-bold text-medieval-dark mt-8 mb-4 border-b-4 border-medieval-accent pb-2 text-center">
+                    O Terceiro Filho Audacioso</h2>
+                
+                <p class="drop-cap">O terceiro filho de Belford era ousado, inquieto e apaixonado pelo confronto direto. Para ele, defesa era atraso, e muros eram sinônimos de fraqueza. Acreditava que a única forma de sobreviver em Belford era encarando o inimigo de frente, sem hesitar.</p>
+
+                <p>Guiado por esse espírito indomável, ele seguiu para o oeste, até os limites do continente, onde o território ainda pertencia aos dragões. Ali, nas bordas do desconhecido, sob céus queimados e florestas devastadas por fogo ancestral, ele fundou o Reino de Lotun.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Viver na Fronteira</h3>
+                
+                <p>Viver ali era um desafio diário. Os rugidos dos dragões eram constantes. Mas o povo que cresceu ali não se curvou. Adaptou-se. Caçou. Evoluiu.</p>
+
+                <p>Lotun desenvolveu uma cultura baseada não em resistência, mas em ataque absoluto. Os jovens só são reconhecidos como guerreiros após caçarem seu primeiro dragão. Mas não é apenas uma prova física — é um ritual de passagem.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    O Ritual da Primeira Caça</h3>
+                
+                <p>Com os espinhos da criatura que derrotam, cada jovem forja sua própria espada. Cada lâmina é um troféu, uma marca viva de sobrevivência, uma extensão da alma do caçador. Ao redor do reino, competições de caça são realizadas com frequência, honrando tradição e coragem.</p>
+
+                <p>Cada guerreiro de Lotun é um monumento ao perigo. As espadas forjadas com espinhos de dragão não são apenas armas — são relíquias que contam histórias. Cada lâmina tem sua própria lenda, cada arranhão na lâmina representa um momento de sobrevivência.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    O Berço de Eve</h3>
+                
+                <p>Em meio às chamas e aos ossos de dragões, nasceu uma garota com o coração inflamado por lendas. Eve, filha de uma curandeira e criada nas margens do Reino de Lotun, cresceu ouvindo histórias sussurradas entre guerreiros: de combates impossíveis, de soldados que riam diante de bestas aladas, de espadas forjadas com os espinhos dos próprios inimigos.</p>
+
+                <p>Ela não queria apenas ouvir essas histórias. Ela queria ser uma. Desde criança, observava os treinamentos dos soldados de Lotun escondida atrás das pedras, com olhos famintos por coragem. Via ferreiros forjarem armas com marteladas que soavam como tambores de guerra, faíscas dançando como fogo vivo.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    A Forja Proibida</h3>
+                
+                <p>Após um novo ataque de dragões às bordas de Lotun, Eve ignorou os avisos e saiu sozinha em direção às carcaças deixadas pela batalha. Não tinha treinamento. Não tinha permissão. Mas tinha fome de conquista.</p>
+
+                <p>Ali, entre os ossos fumegantes e o cheiro de enxofre, ela escolheu seu troféu: um espinho ainda quente, arrancado da pata de um dragão. Sem saber forjar, ela passou dias apenas observando os mestres. À noite, repetia os gestos no escuro, queimando os dedos, errando golpes, afiando a vontade.</p>
+
+                <p>No quarto dia, com as mãos em carne viva, ela forjou sua primeira lâmina. Tão pesada que fez o chão vibrar. Tão leve que parecia parte de si.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Cultura de Coragem</h3>
+                
+                <p>A cultura de Lotun é moldada pela coragem e pela adaptabilidade. Ao contrário de Irus, que busca defesa, e Kheltan, que valoriza preparo, Lotun acredita no confronto direto. Os guerreiros de Lotun não esperam o ataque — eles vão até a ameaça.</p>
+
+                <p>As táticas de caça desenvolvidas em Lotun são únicas em todo Belford. Eles estudam os padrões de voo dos dragões, suas fraquezas, seus comportamentos. Cada caça é planejada como uma obra de arte, onde cada movimento é calculado e cada risco é assumido conscientemente.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Troféus e Honra</h3>
+                
+                <p>Em Lotun, os troféus não são apenas decoração — são prova de valor. Presas, garras e até crânios de dragões são empalhados e exibidos como relíquias. A Irmandade do Dente Branco, uma guilda local, é especializada em vender esses troféus para colecionadores e feiticeiros de outros continentes.</p>
+
+                <p>Cada guerra de Lotun conta uma história. Uma garra pode representar a primeira caça de um jovem guerreiro. Uma presa pode simbolizar a proteção da vila contra um ataque. Cada objeto carrega o peso da sobrevivência e a honra da vitória.</p>
+
+                <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
+                    Fronteiras Sem Medo</h3>
+                
+                <p>Lotun não teme os dragões. Os caça. Os estuda. E os vencem. O legado do terceiro filho de Belford vive em cada espada forjada com espinho de dragão, em cada jovem que enfrenta sua primeira caça, em cada noite de vigília nas fronteiras do continente.</p>
+
+                <p>Lotun não é apenas um reino — é a prova de que a coragem não é ausência de medo, mas a ação apesar dele. E quando os céus rugem com fogo, são os guerreiros de Lotun que correm em direção ao perigo, pois sabem que a verdadeira honra não está em evitar a batalha, mas em enfrentá-la de frente.</p>
+            </section>
+
+            <div class="mt-10 text-center">
+                <a href="Kheltan.html"
+                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold mr-4">
+                    &larr; Kheltan
+                </a>
+                <a href="ReinoOculto.html"
+                    class="inline-block bg-medieval-accent text-medieval-light px-6 py-3 rounded hover:bg-medieval-dark transition duration-300 font-semibold">
+                    Reino Oculto &rarr;
+                </a>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="bg-medieval-dark text-medieval-light mt-12 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2025 Crônicas de Albinur. Todos os direitos reservados.</p>
+            <p class="mt-1">Lotun - Onde a coragem encontra o destino.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script simples para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
