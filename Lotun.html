@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lotun, o Reino dos Caçadores: rastreadores silenciosos que caçam o que os outros reinos temem enfrentar.">
     <title>Lotun - O Reino dos Caçadores | Crônicas de Albinur</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,153 +12,46 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <style>
-        /* Aplica fontes personalizadas */
-        body {
-            font-family: 'Merriweather', serif;
-            background-color: #fdf6e3;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .font-title {
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Cores personalizadas */
-        .bg-medieval-dark {
-            background-color: #4a3c2a;
-        }
-
-        .text-medieval-light {
-            color: #fdf6e3;
-        }
-
-        .border-medieval-accent {
-            border-color: #8a6d3b;
-        }
-
-        .text-medieval-accent {
-            color: #8a6d3b;
-        }
-
-        .bg-medieval-card {
-            background-color: #f5eeda;
-        }
-
-        .hover\:bg-medieval-accent:hover {
-            background-color: #8a6d3b;
-        }
-
-        .hover\:text-medieval-dark:hover {
-            color: #4a3c2a;
-        }
-
-        .text-medieval-dark {
-            color: #4a3c2a;
-        }
-
-        /* Estilos para Drop Caps */
-        .drop-cap::first-letter {
-            float: left;
-            font-size: 5rem;
-            line-height: 4rem;
-            padding-right: 8px;
-            font-family: 'Cinzel', serif;
-            color: #8a6d3b;
-            font-weight: 700;
-        }
-
-        /* Estilos para o conteúdo da história */
-        .story-content h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #4a3c2a;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(74, 60, 42, 0.3);
-        }
-
-        .story-content h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: #4a3c2a;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.2);
-        }
-
-        .story-content p {
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            color: #1f2937;
-            text-align: justify;
-        }
-
-        /* Estilo para barra de rolagem */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #fdf6e3;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #8a6d3b;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6b542d;
-        }
-
-        /* Espaço para imagem */
-        .kingdom-image-placeholder {
-            background: linear-gradient(135deg, #8a6d3b, #4a3c2a);
-            border: 3px dashed #fdf6e3;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fdf6e3;
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            text-align: center;
-            margin: 2rem 0;
-            border-radius: 8px;
-        }
-    </style>
+    <link rel="stylesheet" href="albinur.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%234a3c2a'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Georgia,serif' text-anchor='middle' fill='%23c9a227'%3EA%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Crônicas de Albinur">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Lotun - O Reino dos Caçadores | Crônicas de Albinur">
+    <meta property="og:description" content="Lotun, o Reino dos Caçadores: rastreadores silenciosos que caçam o que os outros reinos temem enfrentar.">
+    <meta property="og:image" content="img/Lotun-Cacador.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="text-gray-800">
     <header class="bg-medieval-dark text-medieval-light shadow-lg sticky top-0 z-10">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="Belford.html"
+            <a href="index.html"
                 class="font-title text-2xl lg:text-3xl font-bold hover:text-medieval-accent transition duration-300">
                 Crônicas de Albinur
             </a>
             <nav>
-                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-medieval-light focus:outline-none"
+                    aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
-                <ul id="menu" class="hidden md:flex space-x-6 font-title items-center">
+                <ul id="menu" class="hidden md:flex space-x-5 font-title items-center text-sm lg:text-base">
+                    <li><a href="index.html" class="hover:text-medieval-accent transition duration-300">Início</a></li>
                     <li><a href="Belford.html" class="hover:text-medieval-accent transition duration-300">Belford</a></li>
                     <li><a href="Irus.html" class="hover:text-medieval-accent transition duration-300">Irus</a></li>
                     <li><a href="Kheltan.html" class="hover:text-medieval-accent transition duration-300">Kheltan</a></li>
-                    <li><a href="Lotun.html" class="hover:text-medieval-accent transition duration-300">Lotun</a></li>
+                    <li><a href="Lotun.html" class="hover:text-medieval-accent transition duration-300 text-medieval-accent">Lotun</a></li>
                     <li><a href="ReinoOculto.html" class="hover:text-medieval-accent transition duration-300">Reino Oculto</a></li>
                 </ul>
             </nav>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-medieval-dark text-center py-2">
+            <a href="index.html"
+                class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Início</a>
             <a href="Belford.html"
                 class="block py-2 px-4 text-sm hover:bg-medieval-accent hover:text-medieval-dark transition duration-300">Belford</a>
             <a href="Irus.html"
@@ -176,14 +70,10 @@
             <h1 class="font-title text-5xl font-bold text-medieval-dark mb-8 text-center"
                 style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Lotun, O Reino dos Caçadores</h1>
 
-            <!-- Espaço para imagem do reino -->
-            <div class="kingdom-image-placeholder">
-                <div>
-                    <div class="text-3xl mb-2">🏹</div>
-                    <div>Imagem de Lotun</div>
-                    <div class="text-sm mt-2 opacity-75">As fronteiras audaciosas de Belford</div>
-                </div>
-            </div>
+            <figure class="story-figure">
+                <img src="img/Lotun-Cacador.jpg" alt="Caçador de Lotun empunhando lâmina forjada de espinhos de dragão" loading="lazy">
+                <figcaption>Cada lâmina é um troféu. Cada guerreiro, um monumento ao perigo.</figcaption>
+            </figure>
 
             <section class="story-content">
                 <h2 class="font-title text-3xl md:text-4xl font-bold text-medieval-dark mt-8 mb-4 border-b-4 border-medieval-accent pb-2 text-center">
@@ -210,7 +100,7 @@
                 <h3 class="font-title text-2xl md:text-3xl font-bold text-medieval-dark mt-8 mb-4 text-center">
                     O Berço de Eve</h3>
                 
-                <p>Em meio às chamas e aos ossos de dragões, nasceu uma garota com o coração inflamado por lendas. Eve, filha de uma curandeira e criada nas margens do Reino de Lotun, cresceu ouvindo histórias sussurradas entre guerreiros: de combates impossíveis, de soldados que riam diante de bestas aladas, de espadas forjadas com os espinhos dos próprios inimigos.</p>
+                <p>Em meio às chamas e aos ossos de dragões, nasceu uma garota com o coração inflamado por lendas. <a href="Eve.html" class="text-medieval-accent underline">Eve</a>, filha de uma curandeira e criada nas margens do Reino de Lotun, cresceu ouvindo histórias sussurradas entre guerreiros: de combates impossíveis, de soldados que riam diante de bestas aladas, de espadas forjadas com os espinhos dos próprios inimigos.</p>
 
                 <p>Ela não queria apenas ouvir essas histórias. Ela queria ser uma. Desde criança, observava os treinamentos dos soldados de Lotun escondida atrás das pedras, com olhos famintos por coragem. Via ferreiros forjarem armas com marteladas que soavam como tambores de guerra, faíscas dançando como fogo vivo.</p>
 
@@ -245,10 +135,14 @@
                 <p>Lotun não é apenas um reino — é a prova de que a coragem não é ausência de medo, mas a ação apesar dele. E quando os céus rugem com fogo, são os guerreiros de Lotun que correm em direção ao perigo, pois sabem que a verdadeira honra não está em evitar a batalha, mas em enfrentá-la de frente.</p>
             </section>
 
-            <div class="mt-10 text-center">
+            <div class="mt-10 text-center flex flex-wrap gap-4 justify-center">
                 <a href="Kheltan.html"
-                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold mr-4">
+                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold">
                     &larr; Kheltan
+                </a>
+                <a href="Eve.html"
+                    class="inline-block bg-medieval-dark text-medieval-light px-6 py-3 rounded hover:bg-medieval-accent hover:text-medieval-dark transition duration-300 font-semibold">
+                    Eve
                 </a>
                 <a href="ReinoOculto.html"
                     class="inline-block bg-medieval-accent text-medieval-light px-6 py-3 rounded hover:bg-medieval-dark transition duration-300 font-semibold">

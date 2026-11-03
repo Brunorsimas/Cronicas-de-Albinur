@@ -1,0 +1,233 @@
+/* Crônicas de Albinur — estilos compartilhados */
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fdf6e3;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c8aa' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.font-title {
+    font-family: 'Cinzel', serif;
+}
+
+/* Paleta medieval */
+.bg-medieval-dark {
+    background-color: #4a3c2a;
+}
+
+.text-medieval-light {
+    color: #fdf6e3;
+}
+
+.border-medieval-accent {
+    border-color: #8a6d3b;
+}
+
+.text-medieval-accent {
+    color: #6b542d;
+}
+
+.bg-medieval-card {
+    background-color: #f5eeda;
+}
+
+.text-medieval-dark {
+    color: #4a3c2a;
+}
+
+.hover\:bg-medieval-accent:hover {
+    background-color: #c9a961;
+}
+
+.hover\:text-medieval-dark:hover {
+    color: #4a3c2a;
+}
+
+/* Capitular */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 5rem;
+    line-height: 4rem;
+    padding-right: 8px;
+    font-family: 'Cinzel', serif;
+    color: #6b542d;
+    font-weight: 700;
+}
+
+/* Conteúdo das histórias */
+.story-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4a3c2a;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(74, 60, 42, 0.3);
+}
+
+.story-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #4a3c2a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.2);
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: #1f2937;
+    text-align: justify;
+}
+
+.story-content ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: #1f2937;
+}
+
+.story-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+/* Imagem ilustrativa das histórias */
+.story-figure {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.story-figure img {
+    /* Teto de altura: impede que imagens em retrato dominem a tela.
+       Paisagens continuam ocupando a largura total do texto. */
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    /* Tailwind aplica img { display: block }, e block com width:auto
+       ignora text-align do pai. Sem isto a imagem encosta na esquerda. */
+    margin-inline: auto;
+    border-radius: 8px;
+    border: 2px solid #8a6d3b;
+    box-shadow: 0 10px 20px rgba(74, 60, 42, 0.35);
+}
+
+.story-figure figcaption {
+    font-family: 'Cinzel', serif;
+    font-size: 0.875rem;
+    color: #6b542d;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* Bloco de citação / profecia */
+.prophecy-text {
+    font-style: italic;
+    color: #5a4632;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 3px solid #8a6d3b;
+    border-right: 3px solid #8a6d3b;
+    background: rgba(245, 238, 218, 0.5);
+}
+
+.mystic-glow {
+    text-shadow: 0 0 10px rgba(138, 109, 59, 0.3);
+}
+
+/* Bloco simbólico para reinos sem arte conhecida */
+.kingdom-image-placeholder {
+    background: linear-gradient(135deg, #8a6d3b, #4a3c2a);
+    border: 3px dashed #fdf6e3;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fdf6e3;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 8px;
+}
+
+/* Ficha de personagem */
+.character-details {
+    background-color: #f5eeda;
+    border: 1px solid #8a6d3b;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.character-details dt {
+    font-weight: 700;
+    color: #4a3c2a;
+    display: inline;
+}
+
+.character-details dd {
+    display: inline;
+    margin-left: 0.25rem;
+}
+
+.character-details div {
+    margin-bottom: 0.25rem;
+}
+
+.character-details h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4a3c2a;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #8a6d3b;
+    padding-bottom: 0.25rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(74, 60, 42, 0.3);
+}
+
+.character-details h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #6b542d;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(74, 60, 42, 0.2);
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fdf6e3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8a6d3b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b542d;
+}
+
+/* Sobre o fundo escuro do header e do rodape, o accent escuro some.
+   #c9a961 da 4.73:1 contra #4a3c2a (AA). */
+.bg-medieval-dark .text-medieval-accent,
+.bg-medieval-dark .hover\:text-medieval-accent:hover {
+    color: #c9a961;
+}
