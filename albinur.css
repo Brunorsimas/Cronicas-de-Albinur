@@ -118,31 +118,28 @@ body {
     box-shadow: 0 10px 20px rgba(74, 60, 42, 0.35);
 }
 
-/* Artes de personagem com fundo branco solido.
-   multiply faz branco x pergaminho = pergaminho, entao o fundo some sem
-   precisar de recorte alpha (PNG com alpha pesaria 5x e deixaria halo nos
-   contornos da armadura prateada). */
+/* Artes de personagem sem fundo de cena: sem moldura, e com teto de altura
+   proprio, menor que os 70vh das paisagens. O limite em px mantem retrato e
+   paisagem na mesma altura, independente do viewport. */
 .story-figure.cutout img {
-    mix-blend-mode: multiply;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    /* Teto proprio, menor que os 70vh das paisagens: sem fundo de cena a
-       arte nao precisa dominar a tela. O limite em px mantem retrato e
-       paisagem com a mesma altura, independente do viewport. */
     max-height: min(48vh, 400px);
 }
 
-/* Fundo claro e uniforme: sem ele o multiply escurece a arte sobre a
-   textura pontilhada do body. */
 .story-figure.cutout {
-    background: #fdf6e3;
-    border-radius: 8px;
     padding: 0.75rem 0;
 }
 
-/* Mesma arte de fundo branco dentro de um card: object-contain evita cortar
-   a figura, e o fundo claro casa com o branco da arte. */
+/* Arte recortada com canal alpha: sombra projetada da o mesmo
+   assentamento que a moldura dava, sem caixa em volta. */
+.story-figure.cutout-alpha img {
+    filter: drop-shadow(0 8px 14px rgba(74, 60, 42, 0.3));
+}
+
+/* Arte recortada dentro de um card: object-contain evita cortar a figura,
+   e o fundo claro a assenta no card. */
 .card-cutout {
     background: #fdf6e3;
     padding: 0.5rem;

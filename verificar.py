@@ -24,6 +24,14 @@ def exists(rel):
 VOID = {'img', 'br', 'hr', 'meta', 'link', 'input', 'source', 'path', 'svg'}
 
 
+def refs(s):
+    """URLs de imagem da pagina: src="..." e cada candidato de srcset."""
+    out = list(re.findall(r'src="([^"]+)"', s))
+    for ss in re.findall(r'srcset="([^"]+)"', s):
+        out += [c.strip().split()[0] for c in ss.split(',') if c.strip()]
+    return out
+
+
 class Check(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -60,7 +68,7 @@ for pg in pages:
         if not exists(href):
             probs.append(f'  css ausente -> {href}')
     # imagens locais
-    for src in re.findall(r'src="([^"]+)"', s):
+    for src in refs(s):
         if src.startswith(('http', 'data:')):
             continue
         if not exists(src):
@@ -89,7 +97,7 @@ for pg in pages:
 used = set()
 for pg in pages:
     s = io.open(os.path.join(DST, pg), encoding='utf-8').read()
-    used |= {os.path.basename(m).lower() for m in re.findall(r'src="([^"]+)"', s)}
+    used |= {os.path.basename(m).lower() for m in refs(s)}
 orphan = [f for f in os.listdir(IMG) if f.lower().endswith(EXTS) and f.lower() not in used]
 print('\nimagens nao usadas:', orphan or 'nenhuma')
 print('paginas com falha:', fails, '/', len(pages))

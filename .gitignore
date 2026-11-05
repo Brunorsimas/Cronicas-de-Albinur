@@ -1,0 +1,6 @@
+# Material de trabalho: fontes 2K, intermediarios e artes antigas.
+# Nao e servido pelo site.
+arquivo/
+
+# Saidas temporarias dos scripts de imagem
+img/_*.png
