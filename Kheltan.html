@@ -71,7 +71,7 @@
                 style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Kheltan, A Forja da Guerra</h1>
 
             <figure class="story-figure">
-                <img src="img/Kheltan-Cavaleiro.jpg" alt="Cavaleiro de Kheltan em armadura negra de placas, com lança e espada, diante da fortaleza nas montanhas" loading="lazy">
+                <img src="img/Kheltan-Cavaleiro.jpg" alt="Cavaleiro de Kheltan em armadura negra de placas, com lança e espada, diante da fortaleza nas montanhas" loading="lazy" width="1536" height="1024">
                 <figcaption>Em Kheltan, a arma é forjada na hora do desafio.</figcaption>
             </figure>
 
@@ -91,7 +91,7 @@
                 <p>As forjas de Kheltan funcionam dia e noite, o som dos martelos ecoando pelas montanhas como um coração pulsante. Cada arma criada carrega não apenas metal, mas a determinação e o espírito de seu criador.</p>
 
                 <figure class="story-figure">
-                    <img src="img/Kheltan-AcoDeDragao.jpg" alt="Guerreiro de Kheltan em armadura de placas escamadas, empunhando lança cerimonial e escudo, sob um céu de brasa" loading="lazy">
+                    <img src="img/Kheltan-AcoDeDragao.jpg" alt="Guerreiro de Kheltan em armadura de placas escamadas, empunhando lança cerimonial e escudo, sob um céu de brasa" loading="lazy" width="1600" height="900">
                     <figcaption>Placas temperadas com escama de dragão: o aço que nasceu das cinzas de Kheltan.</figcaption>
                 </figure>
 
@@ -157,18 +157,19 @@
     </footer>
 
     <script>
-        // Script simples para menu mobile
+        // Menu mobile
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            menuBtn.setAttribute('aria-expanded', String(open));
         });
 
-        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 768) {
                 mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
             }
         });
     </script>

@@ -71,7 +71,7 @@
                 style="text-shadow: 3px 3px 6px rgba(74, 60, 42, 0.4);">Lotun, O Reino dos Caçadores</h1>
 
             <figure class="story-figure">
-                <img src="img/Lotun-Cacador.jpg" alt="Caçador de Lotun empunhando lâmina forjada de espinhos de dragão" loading="lazy">
+                <img src="img/Lotun-Cacador.jpg" alt="Caçador de Lotun empunhando lâmina forjada de espinhos de dragão" loading="lazy" width="1600" height="1006">
                 <figcaption>Cada lâmina é um troféu. Cada guerreiro, um monumento ao perigo.</figcaption>
             </figure>
 
@@ -161,18 +161,19 @@
     </footer>
 
     <script>
-        // Script simples para menu mobile
+        // Menu mobile
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            menuBtn.setAttribute('aria-expanded', String(open));
         });
 
-        // Opcional: Fechar menu mobile se a tela for redimensionada para desktop
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 768) {
                 mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
             }
         });
     </script>
