@@ -19,7 +19,8 @@ ERROS_COMUNS = [
     (r"\bdevido\s+a\s+que\b", "porque"),
     (r"\bem\s+baixo\b", "embaixo"),
     (r"\bde\s+repete\b", "se repete"),
-    (r"(\b\w+\b)\s+\1\b", "palavra repetida"),
+    # "e e" nao e gagueira: e conjuncao seguida do verbo ser acentuado.
+    (r"(?!\be e\b)(\b\w+\b)\s+\1\b", "palavra repetida"),
 ]
 
 problemas = []
